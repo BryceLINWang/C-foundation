@@ -1,0 +1,37 @@
+1.使用临时变量
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+int a,b;
+int tmp;
+scanf_s("%d%d",&a,&b);
+printf("a=%d b=%d\n",a,b);
+tmp=a;
+a=b;
+b=tmp;
+printf("a=%d b=%d\n",a,b);
+system("pause");
+return 0;
+}
+2.创建函数，主函数调用
+#include<stdio.h>
+#include<stdlib.h>
+void swap(int *a,int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+int main()
+{
+	int a, b;
+	scanf_s("%d%d", &a,&b);
+	printf("a=%d b = %d\n", a, b);
+	swap(&a, &b);
+	printf("a=%d b = %d\n",a,b);
+	system("pause");
+	return 0;
+  3.不调用临时变量，不创建函数。
+#include<stdio.h>
+#include<stdlib.h>
