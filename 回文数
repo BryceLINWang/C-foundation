@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include<stdlib.h>
+int main()
+{
+	int n;
+	int i;
+	int tmp, sum = 0;
+	printf("Please input numbers: ");
+	scanf_s("%d", &n);
+	for (i = n; i; i /= 10)
+	{
+		tmp = i % 10;
+		sum = sum * 10 + tmp;
+	}
+	if (n == sum){
+		printf("%d是一个回文数!\n", n);
+	}
+	else{
+		printf("%d不是一个回文数!\n", n);
+	}
+	system("pause");
+	return 0;
+}
