@@ -22,3 +22,31 @@ int main()
 	system("pause");
 	return 0;
 }
+判断回文字符串
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main()
+{
+	int i, j,n,t=1;
+	char a[10];
+	printf("Please input string: ");
+	gets(a);
+	n = strlen(a);
+	for (i = 0, j = n - 1; i != j; i++,j-- )
+	{
+			if (a[i] != a[j])
+			{
+				t = 0;
+				break;
+			}
+		}
+	if (t)
+		printf("是回文的！\n");
+	else
+		printf("不是回文的！\n");
+	system("pause");
+	return 0;
+}
