@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	double sum=0, tmp;
+	int i;
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 2 == 0)
+		{
+			tmp = 1.0 / i*(-1);
+		}
+		else
+		{
+			tmp = 1.0 / i;
+		}
+		sum += tmp;
+	}
+	printf("总和为%lf\n",sum);
+	system("pause");
+	return 0;
+}
