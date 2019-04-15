@@ -1,0 +1,58 @@
+循环实现
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	int n;
+	int a1 = 1;
+	int a2 = 1;
+	int a = 0;
+	printf("输入一个整数n:");
+	scanf("%d",&n);
+	int m = n;
+	if (n <= 2)
+	{
+		a = 1;//第1，2个斐波那契数
+	}
+	else
+	{
+		while (n > 2)//实现斐波那契数列
+		{
+			a = a1 + a2;
+			a1 = a2;
+			a2 = a;
+			n--;
+		}
+	}
+	printf("第%d个斐波那契数为%d\n" ,m,a);
+    system("pause");
+	return 0;
+  
+  递归实现
+  
+  #define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int feibo(int n)
+{ 
+	if (n <= 2)
+	{
+		return 1;
+	}
+	return feibo(n - 1) + feibo(n - 2);
+}
+
+int main()
+{
+	int n;
+	printf("输入一个整数n:\n");
+	scanf("%d",&n);
+	int m = n;
+	int tmp=feibo(n);
+	printf("第%d个斐波那契数为%d\n" ,m,tmp);
+    system("pause");
+	return 0;
+}
