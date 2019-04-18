@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int hang;
+	int i, j;
+	int a[100][100];
+	printf("输入三角形行数：\n");
+	scanf("%d", &hang);
+	//初始化数组
+	for (i = 0; i < 100; i++)
+	{
+		for (j = 0; j < 100; j++)
+		{
+			a[i][j] = 0;
+		}
+	}
+	//每一行第一列为1
+	for (i = 0; i < hang; i++)
+	{
+		a[i][0] = 1;
+	}
+	//杨辉三角形规律
+	for (i = 1; i < hang; i++)
+	{
+		for (j = 1; j <= i; j++)
+		{
+			a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
+		}
+	}
+	//输出杨辉三角形
+	for (i = 0; i < hang; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf("%d  ", a[i][j]);
+		}//输出一行再输换行符
+			printf("\n");
+		
+	}
+	system("pause");
+	return 0;
+}
