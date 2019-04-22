@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	int a[10];
+	int i;
+	printf("请输入一个长度为10的整形数组：\n");
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	int left=0;
+	int sz = sizeof(a) / sizeof(a[0]);//数组元素个数
+	int right = sz - 1;
+	int tmp=0;
+	while (left<=right){
+		if ((a[left]%2==1)&&(a[right]%2==0))
+		{
+			left++;
+			right--;
+		}
+		else if ((a[left] % 2 == 1) && (a[right] % 2 == 1))
+		{
+			left++;
+		}
+		else if ((a[left] % 2 == 0) && (a[right] % 2 == 0))
+		{
+			right--;
+		}
+		else if ((a[left] % 2 == 0) && (a[right] % 2 ==1 ))
+		{
+			tmp = a[left];
+			a[left] = a[right];
+			a[right] = tmp;
+			left++;
+			right--;
+		}
+	}
+	printf("调整后数组为：\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d", a[i]);
+		printf(" ");
+	}
+	system("pause");
+	return 0;
+}
