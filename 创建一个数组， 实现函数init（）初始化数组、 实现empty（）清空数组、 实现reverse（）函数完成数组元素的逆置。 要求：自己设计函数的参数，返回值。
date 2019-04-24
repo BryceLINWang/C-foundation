@@ -1,0 +1,65 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void init(int a[], int n)
+{
+	int i;
+	printf("输入十个整数:\n");
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("将初始化的数组输出:\n");
+	for (i = 0; i < n; i++)
+	{
+		printf("%d",a[i]);
+		printf(" ");
+	}
+	printf("\n");
+}
+void reverse(int a[], int n)
+{
+	int tmp;
+	int left = 0;
+	int right = n - 1;
+	while (left<=right)
+	{
+		tmp = a[left];
+		a[left] = a[right];
+		a[right] = tmp;
+		left++;
+		right--;
+	}
+	printf("将转置后的数组输出:\n");
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d", a[i]);
+		printf(" ");
+	}
+	printf("\n");
+}
+void empty(int a[], int n)
+{
+	for (int i = 0; i < n;i++)
+	{
+		a[i] = 0;
+	}
+	printf("将清空后的数组输出:\n");
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d", a[i]);
+		printf(" ");
+	}
+	printf("\n");
+}
+int main()
+{
+	int a[10];
+	int n = sizeof(a) / sizeof(a[0]);
+	init(a,n);
+	reverse(a, n);
+	empty(a,n);
+	system("pause");
+	return 0;
+}
