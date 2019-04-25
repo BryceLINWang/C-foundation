@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	char word; 
+	for (;;)
+	{
+		printf("输入一个字符:\n");
+		scanf("%s", &word);
+		if (word >= 'A'  && word <= 'Z')
+		{
+			putchar(word + 32);
+			printf("\n");
+		}
+		else if (word >= 'a' && word <= 'z')
+		{
+			putchar(word - 32);
+			printf("\n");
+	}
+		else
+		{
+			break;
+		}
+	}
+	system("pause");
+	return 0;
+}
