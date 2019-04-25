@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int digitsum(int n)
+{
+	int i;
+	int sum=0;
+	if (n != 0)
+	{
+		i= n % 10;
+		n = n / 10;
+		sum =i+ digitsum(n);
+	}
+	return sum;
+}
+int main()
+{
+	int n;
+	printf("输入一个非负整数：\n");
+	scanf("%d", &n);
+	printf("其组成数字之和为%d\n", digitsum(n));
+	system("pause");
+	return 0;
+}
